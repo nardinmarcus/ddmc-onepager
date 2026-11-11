@@ -1,0 +1,96 @@
+{
+  "positive_concepts": {
+    "onepager": [
+      "一页纸",
+      "一页",
+      "one-pager",
+      "one pager",
+      "长图"
+    ],
+    "frontline": [
+      "宣导",
+      "下发",
+      "一线",
+      "大字报"
+    ],
+    "redline": [
+      "红线",
+      "禁止",
+      "处罚"
+    ],
+    "briefing": [
+      "解读",
+      "制度",
+      "口径"
+    ],
+    "report": [
+      "战报",
+      "通报",
+      "排名",
+      "复盘"
+    ],
+    "content_source": [
+      "内容",
+      "标准",
+      "SOP",
+      "原文"
+    ]
+  },
+  "recommended_threshold": 0.34,
+  "negative_patterns": [
+    "分析报告",
+    "多页",
+    "深度诊断",
+    "数据看板"
+  ],
+  "explicit_activation_patterns": [
+    "ddmc-onepager"
+  ],
+  "should_trigger": [
+    {
+      "text": "出「捆绑大闸蟹操作」一页纸：到货暂养、出货检查、打包流程，内容如下……",
+      "family": "sop"
+    },
+    {
+      "text": "把这条打包新标准做成宣导长图下发一线",
+      "family": "sop"
+    },
+    {
+      "text": "仓内六条红线做成红线宣导一页纸，每条带处罚",
+      "family": "redline"
+    },
+    {
+      "text": "9月考核权重变化出一页考核解读给站长",
+      "family": "briefing"
+    },
+    {
+      "text": "M9 上半场经营战报一页纸，KPI 和战区排名通报",
+      "family": "report"
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "text": "帮我做一份 UE 月度费用多页分析报告，带数据看板图表",
+      "family": "analysis"
+    },
+    {
+      "text": "生成这个季度的深度诊断报告",
+      "family": "analysis"
+    }
+  ],
+  "near_neighbor": [
+    {
+      "text": "生成一张内推排名海报，只要图不要说明文字",
+      "family": "poster"
+    },
+    {
+      "text": "把 PK 数据做成诊断报告",
+      "family": "analysis"
+    }
+  ],
+  "description_required_concepts": [
+    "onepager",
+    "frontline",
+    "content_source"
+  ]
+}

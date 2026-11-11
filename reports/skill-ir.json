@@ -1,0 +1,99 @@
+{
+  "schema_version": "2.1.0-namoo-lite",
+  "generated_at": "2026-11-11",
+  "package": {
+    "name": "ddmc-onepager",
+    "version": "1.0.0",
+    "owner": "nardinmarcus",
+    "maturity_tier": "production",
+    "lifecycle_stage": null,
+    "self_distribution": {}
+  },
+  "intent": {
+    "description": "设计并生成叮咚买菜上海东区「一线下发一页纸」：单主题竖版长图 HTML（960px 宽，默认一屏 ≤1700px，html2canvas 一键导出 PNG，微信群直发）。\n用户要「出一页纸 / 宣导页 / 下发一线 / 大字报 / 红线宣导 / SOP 变更宣导 / 新标准宣导 / 考核解读一页纸 / 战报通报一页纸 / 讲清楚一件事 / one-pager」时使用。\n四型模板：T1 宣导（SOP/标准/操作）、T2 红线（安全/合规/稽核）、T3 解读（考核/制度，杂志风）、T4 战报（数据通报，DATA 块驱动）。\n内容主权：结构忠于原始内容，源内容没有的模块（FAQ/WHY/考核）不造不补；零分隔线；标签胶囊化；能图不文。\n不要用于：UE/费用分析报告（ddmc-analysis-report）、夏战 PK 诊断（ddmc-summer-pk-diagnostic）、内推排名海报（ddmc-referral-poster）、多页深度报告——一页纸是执行宣导文体。\n",
+    "job_to_be_done": "把叮咚买菜上海东区某个具体业务方面讲清楚成一页竖版长图（HTML），发到一线微信群；结构忠于原始内容，不造不补。",
+    "target_users": [
+      "Namoo（叮咚买菜-用户服务中心-上海东区，前置仓策略运营专家）",
+      "需要向站长/一线员工下发标准、红线、解读、战报的运营人员"
+    ],
+    "inputs": [
+      "单主题原始内容（口述、Markdown、CSV、制度发文等）",
+      "可选：指定模板型别 T1/T2/T3/T4"
+    ],
+    "outputs": [
+      "单文件竖版长图 HTML（960px 宽，默认一屏 ≤1700px，品牌牌内嵌）",
+      "卡片结构规划 + 交付前 QA 截图 vision 自检记录"
+    ],
+    "exclusions": [
+      "UE/费用等多页分析报告（ddmc-analysis-report / ddmc-ue-report-generator）",
+      "夏战 PK 诊断报告（ddmc-summer-pk-diagnostic）",
+      "内推排名海报（ddmc-referral-poster）",
+      "PNG 文件产出与归档（由使用者浏览器内一键导出）"
+    ],
+    "namoo_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "出「捆绑大闸蟹操作」一页纸：到货暂养、出货检查、打包流程，内容如下……",
+      "把这条打包新标准做成宣导长图下发一线",
+      "仓内六条红线做成红线宣导一页纸，每条带处罚",
+      "9月考核权重变化出一页考核解读给站长",
+      "M9 上半场经营战报一页纸，KPI 和战区排名通报"
+    ],
+    "should_not_trigger": [
+      "帮我做一份 UE 月度费用多页分析报告，带数据看板图表",
+      "生成这个季度的深度诊断报告"
+    ],
+    "near_neighbor": [
+      "生成一张内推排名海报，只要图不要说明文字",
+      "把 PK 数据做成诊断报告"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references\\content-contract.md",
+      "references\\production.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals\\trigger_cases.json"
+    ],
+    "reports": [
+      "reports\\creation-handoff.md",
+      "reports\\prior-art-research.md",
+      "reports\\skill-ir.json",
+      "reports\\trigger-eval.json"
+    ]
+  },
+  "portability": {
+    "canonical_format": null,
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {},
+    "execution": {},
+    "trust": {},
+    "permissions": {},
+    "degradation": {}
+  },
+  "gates": {},
+  "evidence_boundary": {
+    "generated_report_presence_is_evidence": false,
+    "recognized_output_evidence_kinds": [
+      "provider_backed",
+      "human_blind_review"
+    ],
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "a generated report supports only the specific claim and verified evidence kind it records; artifact presence alone is not evidence"
+  }
+}

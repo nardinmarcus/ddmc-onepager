@@ -1,0 +1,6 @@
+interface:
+  display_name: 叮咚一页纸生成器（ddmc-onepager）
+  short_description: 忠于原始内容的卡片胶囊风一页纸长图生成器：四型模板（宣导/红线/解读/战报）+ 5W2H 检查透镜，默认一屏，零分隔线。
+  default_prompt: 出「<主题>」一页纸，内容如下：<粘贴原始内容>；型别自动选型（T1 宣导/T2 红线/T3 解读/T4 战报）
+compatibility:
+  adapter_targets: [openai, claude, generic, agent-skills-compatible]

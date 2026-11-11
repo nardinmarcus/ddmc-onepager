@@ -1,0 +1,42 @@
+{
+  "name": "ddmc-onepager",
+  "version": "1.0.0",
+  "owner": "nardinmarcus",
+  "updated_at": "2026-11-11",
+  "status": "active",
+  "maturity_tier": "production",
+  "intent": {
+    "job_to_be_done": "把叮咚买菜上海东区某个具体业务方面讲清楚成一页竖版长图（HTML），发到一线微信群；结构忠于原始内容，不造不补。",
+    "target_users": [
+      "Namoo（叮咚买菜-用户服务中心-上海东区，前置仓策略运营专家）",
+      "需要向站长/一线员工下发标准、红线、解读、战报的运营人员"
+    ],
+    "inputs": [
+      "单主题原始内容（口述、Markdown、CSV、制度发文等）",
+      "可选：指定模板型别 T1/T2/T3/T4"
+    ],
+    "outputs": [
+      "单文件竖版长图 HTML（960px 宽，默认一屏 ≤1700px，品牌牌内嵌）",
+      "卡片结构规划 + 交付前 QA 截图 vision 自检记录"
+    ],
+    "exclusions": [
+      "UE/费用等多页分析报告（ddmc-analysis-report / ddmc-ue-report-generator）",
+      "夏战 PK 诊断报告（ddmc-summer-pk-diagnostic）",
+      "内推排名海报（ddmc-referral-poster）",
+      "PNG 文件产出与归档（由使用者浏览器内一键导出）"
+    ]
+  },
+  "skillops": {
+    "task_end_review": "required",
+    "correction_capture": "explicit_only",
+    "approval_mode": "per_item",
+    "candidate_change": "after_user_approval",
+    "canonical_change": "after_verified_candidate_approval"
+  },
+  "release_gates": {
+    "structure": "validate_skill.py 全项 pass",
+    "trigger_eval": "reports/trigger-eval.json ok:true 全用例通过",
+    "js_check": "全部模板内联 script node --check 通过",
+    "vision_qa": "六件成品/模板截图 vision 自检通过（无溢出/重叠/按钮入镜/线条）"
+  }
+}
