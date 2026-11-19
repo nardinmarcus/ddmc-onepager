@@ -1,8 +1,8 @@
 {
   "name": "ddmc-onepager",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "owner": "nardinmarcus",
-  "updated_at": "2026-11-11",
+  "updated_at": "2026-11-19",
   "status": "active",
   "maturity_tier": "production",
   "intent": {
@@ -17,7 +17,7 @@
     ],
     "outputs": [
       "单文件竖版长图 HTML（960px 宽，默认一屏 ≤1700px，品牌牌内嵌）",
-      "卡片结构规划 + 交付前 QA 截图 vision 自检记录"
+      "卡片结构规划 + 交付前 QA 自检记录（组装脚本确定性 + node --check + 契约自查，产线无截图环节）"
     ],
     "exclusions": [
       "UE/费用等多页分析报告（ddmc-analysis-report / ddmc-ue-report-generator）",

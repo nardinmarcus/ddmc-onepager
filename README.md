@@ -3,7 +3,7 @@
 把**一个具体业务方面**讲清楚成一页竖版长图 HTML（960px 宽，默认一屏 ≤1700px），发到一线微信群。
 为叮咚买菜·上海东区前置仓运营场景定制，方法论通用于任何需要"一页纸下发"的团队。
 
-![type:skill](https://img.shields.io/badge/type-agent--skill-blue) ![version](https://img.shields.io/badge/version-1.0.0-green)
+![type:skill](https://img.shields.io/badge/type-agent--skill-blue) ![version](https://img.shields.io/badge/version-1.1.0-green)
 
 ## 它解决什么问题
 
@@ -42,7 +42,7 @@ npx skills add nardinmarcus/ddmc-onepager
 ① 到货及暂养：到货要求不打样不得拒收；……
 ```
 
-Agent 会：读内容 → 给卡片结构规划 → 选型填充 → JS 校验 + QA 截图自检 → **默认浏览器打开 HTML**。
+Agent 会：读内容 → 给卡片结构规划 → 选型填充 → 内容区单独成文 → `scripts/build_qa.py` 组装（logo 注入 + 头尾拼接 + node --check，秒级）→ **默认浏览器打开 HTML**。产线无截图环节，质量靠组装脚本确定性 + 校验 + 契约自查。
 
 ## 导出 PNG
 
@@ -88,7 +88,9 @@ node --check <提取的内联脚本>
 ├── references/
 │   ├── content-contract.md     # 内容契约（忠于内容/零线条/胶囊/色板/高度）
 │   └── production.md           # 生产流程 + QA 清单 + 坑位
+├── scripts/build_qa.py         # 组装产线：logo 注入 + 头尾拼接 + node --check
 ├── templates/                  # 四型单文件 HTML 模板（零外部依赖，仅 html2canvas CDN）
+├── examples/                   # 成品示例（T1 宣导）
 ├── assets/ddmc-logo.jpg        # 品牌牌 logo 母版
 ├── agents/interface.yaml
 ├── evals/trigger_cases.json
@@ -98,7 +100,7 @@ node --check <提取的内联脚本>
 
 ## 前提与边界
 
-- 需要 agent 具备文件读写 + 浏览器/截图能力（QA 自检用）
+- 需要 agent 具备文件读写能力 + Python 3 与 Node.js（组装与 JS 校验用）
 - 不用于：多页分析报告、数据看板、通用 PPT —— 一页纸是**执行宣导文体**，不是分析文体
 - 本 skill 为叮咚买菜内部运营场景定制；模板与契约可复用，品牌元素请替换为自己的
 

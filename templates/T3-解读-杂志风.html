@@ -19,7 +19,7 @@
 -->
 <style>
   :root{
-    --bg:#F7F2EB; --txt:#104A4A;
+    --bg:#FAF8F5; --txt:#104A4A;
     --mut:rgba(16,74,74,.60); --lab:rgba(16,74,74,.72);
     --faint:rgba(16,74,74,.32); --quiet:rgba(16,74,74,.15);
     --data:#009999; --data2:#7FC4C4; --hero:#104A4A;
@@ -211,7 +211,7 @@ async function exportPNG(){
   const btn=document.getElementById('exportBtn');
   btn.disabled=true;btn.textContent='正在生成…';
   try{
-    const canvas=await html2canvas(document.getElementById('sheet'),{scale:2,useCORS:true,backgroundColor:'#F7F2EB'});
+    const canvas=await html2canvas(document.getElementById('sheet'),{scale:2,useCORS:true,backgroundColor:'#FAF8F5'});
     const link=document.createElement('a');
     link.download='一页纸_考核解读.png';
     link.href=canvas.toDataURL('image/png');
